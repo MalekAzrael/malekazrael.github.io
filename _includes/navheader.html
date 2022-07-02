@@ -1,0 +1,72 @@
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+	  <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          {%- if site.logo -%}
+            <img height="{{ site.logo.height | default: 52 }}" src="{{ site.logo.path }}"/>
+          {%- else -%}
+            {{ site.title }}
+          {%- endif -%}
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+        {% for link in site.data.navigation[site.locale].nav %}
+          <li class="nav-item">
+            {%- if link.url -%}
+              <a class="nav-link js-scroll-trigger" href="{{ link.url }}">{{ link.title }}</a>
+            {%- else if link.section -%}
+              <a class="nav-link js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
+            {%- else -%}
+              <a class="nav-link js-scroll-trigger" href="#">{{ link.title }}</a>
+            {%- endif -%}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+  
+  <!-- Header -->
+  <header class="masthead">
+    <div class="video-container">
+    <video autoplay="" id="heroVideo" loop="" muted="" poster="images/hero-video-poster.jpg">
+      <source src="/assets/img/bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+    <div class="container">
+
+
+
+
+      <div class="intro-text">
+	  {%- if site.data.sitetext[site.locale].header.title -%}
+        <div class="intro-lead-in">{{ site.data.sitetext[site.locale].header.title | markdownify }}</div>
+	  {%- endif -%}
+	  {%- if site.data.sitetext[site.locale].header.text -%}
+        <div class="intro-heading text-uppercase">{{ site.data.sitetext[site.locale].header.text | markdownify }}</div>
+	  {%- endif -%}
+
+        <div class="section group streamicons">
+          <div class="col span_1_of_4">
+            <a href="https://music.apple.com/us/album/waves/1590589984"><img src="/assets/img/104447_apple_logo_icon.svg" height="64"></a>
+          </div>
+          <div class="col span_1_of_4">
+            <a href="https://open.spotify.com/album/4OgbCs9fpmOGnrFtZHN5ci"><img src="/assets/img/Spotify_logo_without_text.svg" height="64"></a>
+          </div>
+          <div class="col span_1_of_4">
+            <a href="https://www.youtube.com/watch?v=MeqzWoE84OM&list=OLAK5uy_k5fMjLh69ymXJEvOFuLIaVfXiRQNjGETA"><img src="/assets/img/YouTube_social_red_circle_(2017).svg" height="64"></a>
+          </div>
+          <div class="col span_1_of_4">
+            <a href="https://music.amazon.com/albums/B09JL7CFV4"><img src="/assets/img/1632496_amazon_circle_ecommerce_round icon_shopping_icon.svg" height="64"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End Header -->

@@ -1,0 +1,194 @@
+// Styling for the masthead
+header.masthead {
+  text-align: center;
+  color: white;
+  position: relative;
+  //background-image: url("#{$header-image}");
+  //background-repeat: no-repeat;
+  //background-attachment: scroll;
+  //background-position: center center;
+  //background-size: cover;
+  
+  .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    position: relative;
+    display: block;
+    .intro-lead-in {
+      font-size: 22px;
+      font-style: italic;
+      line-height: 22px;
+      margin-bottom: 25px;
+      //@include serif-font;
+      @include album-font;
+
+    }
+    .intro-heading {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 25px;
+      @include heading-font;
+    }
+    height: auto;
+  }
+
+
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%; 
+  min-height: 100%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%; 
+  min-height: 100%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  @media (max-width: 575.98px) {
+    video {
+      display: none;
+    }
+  }
+  
+
+}
+
+
+
+
+@media (min-width: 768px) {
+  header.masthead {
+    .intro-text {
+      padding-top: 300px;
+      padding-bottom: 200px;
+      .intro-lead-in {
+        font-size: 75px;
+        font-style: italic;
+        line-height: 40px;
+        margin-bottom: 25px;
+        @include album-font;
+      }
+      .intro-heading {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 50px;
+        @include heading-font;
+      }
+    }
+  }
+}
+
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+.streamicons {
+  padding-right: 25%;
+  padding-left: 25%;
+  height: 100px;
+  display: flex;
+  vertical-align:  middle; 
+  img {
+    height: 64px;
+    -webkit-transition: height 100ms ease-in-out;
+    -moz-transition:    height 100ms ease-in-out;
+    -ms-transition:     height 100ms ease-in-out;
+    -o-transition:      height 100ms ease-in-out;
+    transition:         height 100ms ease-in-out;
+
+  }
+}
+
+.streamicons img:hover {
+  margin: auto;
+  padding: auto;
+  display: flex;
+  height: 70px;
+  vertical-align:  middle;
+
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.6%;
+}
+.span_2_of_4 {
+	width: 49.2%;
+}
+.span_1_of_4 {
+	width: 23.8%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
+}
