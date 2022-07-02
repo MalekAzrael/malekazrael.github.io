@@ -1,8 +1,8 @@
 ---
 caption: #what displays in the portfolio grid:
   title: Gumbo Festival
-  date: July 24th, 2022
-  gps: 39.087845,-94.564042,17
+  date: July 24th, 2022 @12:00PM
+  gps: 39.087845,-94.564042
   
 #what displays when the item is clicked:
 title: Gumbo Festival
